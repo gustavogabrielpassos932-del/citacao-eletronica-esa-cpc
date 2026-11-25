@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Citação Eletrônica na Jurisprudência — Material Completo (ESA OAB + CPC + Lei 11.419 + CNJ 455/569 + Vault)</title>
+<style>
+  :root {
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --surface-2: #f1f5f9;
+    --text: #0f172a;
+    --muted: #475569;
+    --border: #e2e8f0;
+    --primary: #1e3a8a;
+    --primary-light: #dbeafe;
+    --accent: #0284c7;
+    --law-bg: #fefce8;
+    --law-border: #ca8a04;
+    --warn-bg: #fef2f2;
+    --warn-border: #dc2626;
+    --ok-bg: #f0fdf4;
+    --ok-border: #16a34a;
+    --shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+  }
+  [data-theme="dark"] {
+    --bg: #0f172a;
+    --surface: #1e293b;
+    --surface-2: #0b1120;
+    --text: #f1f5f9;
+    --muted: #94a3b8;
+    --border: #334155;
+    --primary: #60a5fa;
+    --primary-light: #1e3a8a;
+    --accent: #38bdf8;
+    --law-bg: #1c1917;
+    --law-border: #eab308;
+    --warn-bg: #2a1215;
+    --warn-border: #f87171;
+    --ok-bg: #052e16;
+    --ok-border: #4ade80;
+    --shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+  }
+  header {
+    background: linear-gradient(135deg, #1e3a8a, #0369a1);
+    color: #ffffff;
+    padding: 28px 20px;
+    box-shadow: var(--shadow);
+  }
+  .container { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+  .header-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
+  .badge {
+    display: inline-block; background: rgba(255,255,255,0.18);
+    padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; margin-bottom: 8px;
+  }
+  h1 { margin: 0 0 6px; font-size: clamp(1.4rem, 3vw, 2rem); line-height: 1.25; }
+  .subtitle { margin: 0; opacity: 0.92; font-size: 0.95rem; }
+  .theme-btn {
+    background: rgba(255,255,255,0.16); color: #ffffff;
+    border: 1px solid rgba(255,255,255,0.35); border-radius: 8px;
+    padding: 8px 14px; cursor: pointer; font-weight: 600; font-size: 13px;
+  }
+  nav.tabs {
+    position: sticky; top: 0; z-index: 20;
+    background: var(--surface); border-bottom: 1px solid var(--border);
+    padding: 10px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .tabs-inner { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: thin; }
+  .tab-btn {
+    border: 1px solid var(--border); background: var(--surface-2); color: var(--text);
+    padding: 8px 14px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 13px;
+    white-space: nowrap; transition: 0.15s;
+  }
+  .tab-btn.active { background: var(--primary); color: #ffffff; border-color: var(--primary); }
+  main { padding: 24px 0 60px; }
+  section.panel { display: none; }
+  section.panel.active { display: block; }
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 20px 22px; margin-bottom: 18px; box-shadow: var(--shadow);
+  }
+  h2 { margin-top: 0; color: var(--primary); font-size: 1.3rem; border-bottom: 2px solid var(--border); padding-bottom: 8px; }
+  h3 { color: var(--accent); font-size: 1.08rem; margin: 18px 0 8px; }
+  .law-box {
+    background: var(--law-bg); border-left: 4px solid var(--law-border);
+    border-radius: 8px; padding: 14px 16px; margin: 12px 0; font-size: 0.94rem;
+  }
+  .law-title { font-weight: 700; color: var(--law-border); margin-bottom: 6px; display: block; }
+  .callout-warn { background: var(--warn-bg); border-left: 4px solid var(--warn-border); border-radius: 8px; padding: 13px 16px; margin: 12px 0; }
+  .callout-ok { background: var(--ok-bg); border-left: 4px solid var(--ok-border); border-radius: 8px; padding: 13px 16px; margin: 12px 0; }
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 0.92rem; }
+  th, td { border: 1px solid var(--border); padding: 10px 12px; text-align: left; vertical-align: top; }
+  th { background: var(--surface-2); font-weight: 700; }
+  ul, ol { padding-left: 20px; }
+  li { margin-bottom: 6px; }
+  .vault-ref {
+    font-size: 0.85rem; color: var(--muted); background: var(--surface-2);
+    padding: 3px 8px; border-radius: 6px; display: inline-block; margin-top: 4px;
+  }
+  .quiz-bar {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+    background: var(--surface); border: 1px solid var(--border); padding: 14px 18px;
+    border-radius: 12px; margin-bottom: 18px; box-shadow: var(--shadow);
+  }
+  .score-pill { font-weight: 700; font-size: 0.95rem; color: var(--primary); }
+  .reset-btn {
+    background: var(--surface-2); color: var(--text); border: 1px solid var(--border);
+    padding: 7px 14px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 13px;
+  }
+  .q-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 18px 20px; margin-bottom: 16px; box-shadow: var(--shadow);
+  }
+  .q-head { font-weight: 700; margin-bottom: 12px; font-size: 0.98rem; }
+  .q-tag {
+    display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px;
+    border-radius: 999px; background: var(--primary-light); color: var(--primary); margin-right: 8px;
+  }
+  .opt-btn {
+    display: block; width: 100%; text-align: left; background: var(--surface-2); color: var(--text);
+    border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; margin-bottom: 8px;
+    cursor: pointer; font-size: 0.93rem; transition: 0.15s;
+  }
+  .opt-btn:hover:not(:disabled) { border-color: var(--accent); }
+  .opt-btn.correct { background: var(--ok-bg); border-color: var(--ok-border); font-weight: 600; }
+  .opt-btn.wrong { background: var(--warn-bg); border-color: var(--warn-border); }
+  .q-exp {
+    display: none; margin-top: 10px; padding: 12px 14px; border-radius: 8px;
+    background: var(--surface-2); border-left: 4px solid var(--accent); font-size: 0.9rem;
+  }
+  .q-exp.show { display: block; }
+  footer {
+    text-align: center; color: var(--muted); font-size: 0.85rem; padding: 20px 16px 40px;
+    border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="header-top">
+      <div>
+        <span class="badge">ESA Nacional · Processo Civil · Aula 09 · Teses dos Tribunais + Vault Obsidian</span>
+        <h1>Citação Eletrônica na Jurisprudência e no CPC</h1>
+        <p class="subtitle">Aula Prof. Guilherme Hartmann integrada com Doutrina (Elpídio Donizetti Cap. 7), CPC (arts. 190, 231, 238, 239, 246 e 277), Lei nº 11.419/2006, Resoluções CNJ nº 455/2022 e nº 569/2024 e CF/88 · 50 Questões Comentadas</p>
+      </div>
+      <button class="theme-btn" onclick="toggleTheme()" id="themeBtn">Modo Escuro</button>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs">
+  <div class="container tabs-inner">
+    <button class="tab-btn active" onclick="openTab('tab1', this)">1. Conceito &amp; Modalidades</button>
+    <button class="tab-btn" onclick="openTab('tab2', this)">2. CPC &amp; Lei 11.419/2006</button>
+    <button class="tab-btn" onclick="openTab('tab3', this)">3. DJE &amp; DJEN (CNJ)</button>
+    <button class="tab-btn" onclick="openTab('tab4', this)">4. WhatsApp, E-mail &amp; NJP</button>
+    <button class="tab-btn" onclick="openTab('tab5', this)">5. Quadros &amp; Pegadinhas</button>
+    <button class="tab-btn" onclick="openTab('tab6', this)">6. Bateria (50 Questões)</button>
+  </div>
+</nav>
+
+<main class="container">
+
+  <!-- ABA 1 -->
+  <section id="tab1" class="panel active">
+    <div class="card">
+      <h2>1. Importância, Conceito, Validade e Modalidades de Citação</h2>
+      <p>Segundo o relatório <em>Justiça em Números</em> do CNJ (2024), cerca de <strong>90% dos processos no Brasil</strong> já tramitam em meio eletrônico. A <strong>citação</strong> (CPC, arts. 238 a 259) é o ato formal de integração do réu, executado ou interessado à relação processual, viabilizando o <strong>contraditório e a ampla defesa</strong> (CF/88, art. 5º, LV).</p>
+      <ul>
+        <li><strong>Processo válido sem citação:</strong> A citação é requisito indispensável para que o réu seja <em>condenado</em> (a ausência ou nulidade absoluta gera vício transrescisório — <em>querela nullitatis insanabilis</em>, conforme Elpídio Donizetti). Todavia, o processo pode existir e ser válido sem citação nos casos de <strong>indeferimento da petição inicial</strong> ou <strong>improcedência liminar do pedido</strong> (art. 239, caput), hipóteses em que o réu nada perde.</li>
+        <li><strong>Comparecimento espontâneo (art. 239, § 1º):</strong> Supre a falta ou a nulidade da citação, fluindo daí o prazo de defesa (exige procuração com poderes específicos para receber citação — STJ, Corte Especial, EREsp 1.709.915/CE, Vault).</li>
+        <li><strong>Modalidades:</strong> (1) Meio eletrônico (preferencial); (2) Correio com AR; (3) Oficial de justiça (pessoal ou por hora certa — presumida); (4) Escrivão/chefe de secretaria em cartório; (5) Edital (ficta).</li>
+      </ul>
+
+      <div class="law-box">
+        <span class="law-title">CF/88 Art. 5º, LV + CPC Arts. 238 e 239</span>
+        <p><strong>Art. 5º, LV (CF/88):</strong> aos litigantes, em processo judicial ou administrativo, e aos acusados em geral são assegurados o contraditório e ampla defesa, com os meios e recursos a ela inerentes;</p>
+        <p><strong>Art. 238 (CPC).</strong> Citação é o ato pelo qual são convocados o réu, o executado ou o interessado para integrar a relação processual.<br>
+        <strong>Parágrafo único.</strong> A citação será efetivada em até 45 (quarenta e cinco) dias a partir da propositura da ação.</p>
+        <p><strong>Art. 239 (CPC).</strong> Para a validade do processo é indispensável a citação do réu ou do executado, ressalvadas as hipóteses de indeferimento da petição inicial ou de improcedência liminar do pedido.<br>
+        <strong>§ 1º</strong> O comparecimento espontâneo do réu ou do executado supre a falta ou a nulidade da citação, fluindo a partir desta data o prazo para apresentação de contestação ou de embargos à execução.<br>
+        <strong>§ 2º</strong> Rejeitada a alegação de nulidade, tratando-se de processo de: I – conhecimento, o réu será considerado revel; II – execução, o feito terá seguimento.</p>
+      </div>
+      <span class="vault-ref">Fontes: Aula 09 ESA (Prof. Hartmann) · Elpídio Donizetti (Cap. 7) · CF/88 e CPC</span>
+    </div>
+  </section>
+
+  <!-- ABA 2 -->
+  <section id="tab2" class="panel">
+    <div class="card">
+      <h2>2. Citação Eletrônica no CPC (Lei nº 14.195/2021) e na Lei nº 11.419/2006</h2>
+      <p>A <strong>Lei nº 14.195/2021</strong> alterou profundamente o <strong>art. 246 do CPC</strong>, transformando a citação eletrônica na <strong>modalidade preferencial</strong> (antes era a postal). Para sua efetivação formal, é indispensável o <strong>cadastro prévio</strong> no sistema do Poder Judiciário (Lei nº 11.419/2006, arts. 2º e 6º).</p>
+
+      <div class="callout-warn">
+        <strong>Alerta Prático:</strong> Receber um e-mail aleatório alegando ser "citação judicial" sem cadastro prévio <em>não</em> equivale à citação eletrônica do CPC (além do risco de golpe). A comunicação formal exige cadastro prévio e código identificador verificável no portal do tribunal (art. 246, § 4º).
+      </div>
+
+      <div class="law-box">
+        <span class="law-title">CPC — Art. 246 (Redação da Lei nº 14.195/2021 no Vault)</span>
+        <p><strong>Art. 246.</strong> A citação será feita preferencialmente por meio eletrônico, no prazo de até 2 (dois) dias úteis, contado da decisão que a determinar, por meio dos endereços eletrônicos indicados pelo citando no banco de dados do Poder Judiciário, conforme regulamento do Conselho Nacional de Justiça.<br>
+        <strong>§ 1º</strong> As empresas públicas e privadas são obrigadas a manter cadastro nos sistemas de processo em autos eletrônicos, para efeito de recebimento de citações e intimações, as quais serão efetuadas preferencialmente por esse meio.<br>
+        <strong>§ 1º-A.</strong> A ausência de confirmação, em até 3 (três) dias úteis, contados do recebimento da citação eletrônica, implicará a realização da citação: I – pelo correio; II – por oficial de justiça; III – pelo escrivão ou chefe de secretaria, se o citando comparecer em cartório; IV – por edital.<br>
+        <strong>§ 1º-B.</strong> Na primeira oportunidade de falar nos autos, o réu citado nas formas previstas nos incisos I, II, III e IV do § 1º-A deste artigo deverá apresentar justa causa para a ausência de confirmação do recebimento da citação enviada eletronicamente.<br>
+        <strong>§ 1º-C.</strong> Considera-se ato atentatório à dignidade da justiça, passível de multa de até 5% (cinco por cento) do valor da causa, deixar de confirmar no prazo legal, sem justa causa, o recebimento da citação recebida por meio eletrônico.<br>
+        <strong>§ 2º</strong> O disposto no § 1º aplica-se à União, aos Estados, ao Distrito Federal, aos Municípios e às entidades da administração indireta.<br>
+        <strong>§ 4º</strong> As citações por correio eletrônico serão acompanhadas das orientações para realização da confirmação de recebimento e de código identificador que permitirá a sua identificação na página eletrônica do órgão judicial citante.<br>
+        <strong>§ 5º</strong> As microempresas e as pequenas empresas somente se sujeitam ao disposto no § 1º deste artigo quando não possuírem endereço eletrônico cadastrado no sistema integrado da Rede Nacional para a Simplificação do Registro e da Legalização de Empresas e Negócios (Redesim).</p>
+      </div>
+
+      <div class="law-box">
+        <span class="law-title">Lei nº 11.419/2006 (Processo Eletrônico) — Arts. 2º, 5º (§ 3º) e 6º</span>
+        <p><strong>Art. 2º</strong> O envio de petições, de recursos e a prática de atos processuais em geral por meio eletrônico serão admitidos mediante uso de assinatura eletrônica, na forma do art. 1º desta Lei, sendo obrigatório o credenciamento prévio no Poder Judiciário, conforme disciplinado pelos órgãos respectivos.</p>
+        <p><strong>Art. 5º, § 3º</strong> A consulta referida nos §§ 1º e 2º deste artigo deverá ser feita em até 10 (dez) dias corridos contados da data do envio da intimação, sob pena de considerar-se a intimação automaticamente realizada na data do término desse prazo.</p>
+        <p><strong>Art. 6º</strong> Observadas as formas e as cautelas do art. 5º desta Lei, as citações, inclusive da Fazenda Pública, excetuadas as dos Direitos Processuais Criminal e Infracional, poderão ser feitas por meio eletrônico, desde que a íntegra dos autos seja acessível ao citando.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABA 3 -->
+  <section id="tab3" class="panel">
+    <div class="card">
+      <h2>3. Resoluções CNJ nº 455/2022 e nº 569/2024: DJE e DJEN</h2>
+      <p>A <strong>Resolução CNJ nº 455/2022</strong> — atualizada pela <strong>Resolução CNJ nº 569/2024</strong> (e pela Res. 624/2025) — regulamentou o Portal de Serviços do Poder Judiciário (<code>jus.br</code> / PDPJ-Br) e separou claramente duas plataformas:</p>
+      <ul>
+        <li><strong>Domicílio Judicial Eletrônico (DJE):</strong> Destinado <strong>exclusivamente</strong> à <strong>citação por meio eletrônico</strong> e às comunicações que exijam <strong>vista, ciência ou intimação pessoal</strong> da parte ou de terceiros (exceto citação por edital). <em>Não</em> é usado para intimações ordinárias de advogados.</li>
+        <li><strong>DJEN (Diário de Justiça Eletrônico Nacional — <code>comunica.pje</code>):</strong> Destinado à publicação de despachos, interlocutórias, dispositivos de sentenças, ementas, <strong>intimações destinadas aos advogados</strong> (sem exigência de vista/intimação pessoal) e <strong>editais</strong>.</li>
+      </ul>
+
+      <div class="law-box">
+        <span class="law-title">Resolução CNJ nº 455/2022 (com redação da Resolução CNJ nº 569/2024) — Arts. 11, 16, 18 e 20</span>
+        <p><strong>Art. 11, § 3º</strong> Nos casos em que a lei não exigir vista ou intimação pessoal, os prazos processuais serão contados a partir da publicação no DJEN, na forma do art. 224, §§ 1º e 2º, do CPC, possuindo valor meramente informacional a eventual concomitância de intimação ou comunicação por outros meios. <em>(Redação da Res. nº 569/2024)</em></p>
+        <p><strong>Art. 16.</strong> O cadastro no Domicílio Judicial Eletrônico é obrigatório para a União, para os Estados, para o Distrito Federal, para os Municípios, para as entidades da administração indireta e para as empresas públicas e privadas, para efeitos de recebimento de citações e intimações, conforme disposto no art. 246, caput e § 1º, do CPC/2015, com a alteração realizada pela Lei nº 14.195/2021.<br>
+        <strong>§ 2º</strong> As pessoas físicas, nos termos do art. 77, VII, do CPC, poderão realizar cadastro no Domicílio Judicial Eletrônico para efetuar consultas públicas, bem como para o recebimento de citações e intimações, por meio: I – do Sistema de Login Único da PDPJ-Br, via autenticação no serviço "gov.br" do Poder Executivo Federal, com nível de conta prata ou ouro; e II – de autenticação com uso de certificado digital.</p>
+        <p><strong>Art. 18.</strong> O Domicílio Judicial Eletrônico será utilizado exclusivamente para citação por meio eletrônico e comunicações processuais que exijam vista, ciência ou intimação pessoal da parte ou de terceiros, com exceção da citação por edital, a ser realizada via DJEN. <em>(Redação da Res. nº 569/2024)</em></p>
+        <p><strong>Art. 20, § 3º</strong> Para os casos de citação por meio eletrônico, não havendo aperfeiçoamento em até 3 (três) dias úteis, contados da data do envio da comunicação processual ao Domicílio Judicial Eletrônico, o sistema gerará automaticamente a informação da ausência de citação para os fins previstos no § 1º-A do art. 246 do CPC/2015.<br>
+        <strong>§ 3º-A.</strong> No caso das pessoas jurídicas de direito público, não havendo consulta no prazo de até 10 (dez) dias corridos, contados do envio da citação ao Domicílio Judicial Eletrônico, o ente será considerado automaticamente citado na data do término desse prazo, não se aplicando o disposto no art. 219 do CPC a esse período. <em>(Incluído pela Res. nº 569/2024)</em><br>
+        <strong>§ 3º-B.</strong> No caso de consulta à citação eletrônica dentro dos prazos previstos nos §§ 3º e 3º-A, o prazo para resposta começa a correr no quinto dia útil seguinte à confirmação, na forma do art. 231, IX, do CPC. <em>(Incluído pela Res. nº 569/2024)</em><br>
+        <strong>§ 4º</strong> Para os demais casos que exijam intimação pessoal, não havendo aperfeiçoamento em até 10 (dez) dias corridos a partir da data do envio da comunicação processual ao Domicílio Judicial Eletrônico, esta será considerada automaticamente realizada na data do término desse prazo, nos termos do art. 5º, § 3º, da Lei nº 11.419/2006, não se aplicando o disposto no art. 219 do CPC a esse período. <em>(Redação da Res. nº 569/2024)</em></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABA 4 -->
+  <section id="tab4" class="panel">
+    <div class="card">
+      <h2>4. Jurisprudência sobre Citação por WhatsApp e Aplicativos de Mensagem</h2>
+      <ul>
+        <li><strong>TJRJ (2024):</strong> A citação eletrônica do art. 246 do CPC <strong>não abrange</strong>, por si só, aplicativos de mensagem (WhatsApp, Direct etc.). "Citação eletrônica" não equivale a qualquer comunicação digital informal.</li>
+        <li><strong>TJMG (fev./2025):</strong> A citação eletrônica do CPC exige cadastro no DJE (voluntário para pessoa física); o uso do WhatsApp sem anuência expressa do destinatário foi considerado inválido.</li>
+        <li><strong>Instrumentalidade das formas (art. 277, CPC) e STJ (2021):</strong> Embora sem previsão legal específica no CPC, a citação por WhatsApp pode ser validada se atingir sua finalidade — <strong>ciência inequívoca da demanda sem prejuízo</strong>. Para aferir autenticidade, o STJ (parâmetro da jurisprudência criminal e precedentes cíveis) exige <strong>três elementos indutivos</strong>: (1) confirmação do número de telefone do destinatário; (2) confirmação escrita de recebimento/ciência; e (3) foto individual (observando-se que a foto isolada é elemento frágil). Caso o réu compareça e apresente contestação, eventual vício é suprido (art. 239, § 1º).</li>
+      </ul>
+
+      <div class="law-box">
+        <span class="law-title">CPC — Art. 277 (Instrumentalidade das Formas)</span>
+        <p><strong>Art. 277.</strong> Quando a lei prescrever determinada forma, o juiz considerará válido o ato se, realizado de outro modo, lhe alcançar a finalidade.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>5. Negócio Jurídico Processual e Recomendação Prática</h2>
+      <p>Com base no <strong>art. 190 do CPC</strong> e no <strong>Enunciado 19 do FPPC</strong> (aprovado por unanimidade), é plenamente válida a celebração de <strong>negócio processual atípico</strong> convencionando meios alternativos de comunicação processual entre as partes.</p>
+
+      <div class="callout-ok">
+        <strong>Dica Prática (Prof. Guilherme Hartmann):</strong> Ao redigir contratos (inclusive contratos de honorários), inclua cláusula expressa identificando o <strong>e-mail</strong> e o <strong>telefone/WhatsApp</strong> dos contratantes e autorizando a realização de citações e intimações judiciais por esses canais. Isso valida preventivamente a comunicação eletrônica e afasta alegações futuras de desconhecimento ou nulidade.
+      </div>
+
+      <div class="law-box">
+        <span class="law-title">CPC — Art. 190 (Negócio Jurídico Processual)</span>
+        <p><strong>Art. 190.</strong> Versando o processo sobre direitos que admitam autocomposição, é lícito às partes plenamente capazes estipular mudanças no procedimento para ajustá-lo às especificidades da causa e convencionar sobre os seus ônus, poderes, faculdades e deveres processuais, antes ou durante o processo.<br>
+        <strong>Parágrafo único.</strong> De ofício ou a requerimento, o juiz controlará a validade das convenções previstas neste artigo, recusando-lhes aplicação somente nos casos de nulidade ou de inserção abusiva em contrato de adesão ou em que alguma parte se encontre em manifesta situação de vulnerabilidade.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABA 5 -->
+  <section id="tab5" class="panel">
+    <div class="card">
+      <h2>6. Quadro Comparativo: Prazos e Consequências no DJE vs. DJEN</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Hipótese</th><th>Plataforma</th><th>Prazo para Consulta</th><th>Se NÃO houver consulta no prazo</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Citação de PJ Privada ou PF cadastrada</strong></td>
+              <td>DJE (art. 246, § 1º-A, CPC; art. 20, § 3º, Res. 455)</td>
+              <td><strong>3 dias úteis</strong></td>
+              <td><strong>Não</strong> gera citação automática → citação pelos meios tradicionais (correio, oficial, edital) + dever de apresentar <strong>justa causa</strong>, sob pena de <strong>multa de até 5%</strong> do valor da causa.</td>
+            </tr>
+            <tr>
+              <td><strong>Citação de PJ de Direito Público</strong></td>
+              <td>DJE (art. 20, § 3º-A, Res. 455 — incluído pela Res. 569/2024)</td>
+              <td><strong>10 dias corridos</strong></td>
+              <td>Considera-se <strong>automaticamente citado</strong> no término do prazo (não se aplica o art. 219 do CPC a esse período).</td>
+            </tr>
+            <tr>
+              <td><strong>Intimação pessoal (partes/terceiros)</strong></td>
+              <td>DJE (art. 20, § 4º, Res. 455 e art. 5º, § 3º, Lei 11.419/2006)</td>
+              <td><strong>10 dias corridos</strong></td>
+              <td>Considera-se <strong>automaticamente intimado</strong> no término do prazo (dias corridos).</td>
+            </tr>
+            <tr>
+              <td><strong>Intimação comum de advogados e editais</strong></td>
+              <td>DJEN (arts. 11, § 3º, e 13, Res. 455)</td>
+              <td>Publicação oficial</td>
+              <td>Prazo conta-se a partir da publicação no DJEN (1º dia útil após disponibilização; início no 1º dia útil seguinte — art. 224, CPC).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>7. Mapa Rápido de Pegadinhas de Prova</h2>
+      <ul>
+        <li><strong>Citação eletrônica (Lei 14.195/2021):</strong> É a modalidade <strong>preferencial</strong> (art. 246, CPC), em até <strong>2 dias úteis</strong> da decisão, mas exige <strong>cadastro prévio</strong>.</li>
+        <li><strong>Início do prazo de defesa após confirmação da citação eletrônica:</strong> <strong>5º dia útil seguinte</strong> à confirmação (art. 231, IX, CPC e art. 20, § 3º-B, Res. CNJ 455/2022).</li>
+        <li><strong>Silêncio do citando privado nos 3 dias úteis:</strong> <strong>Não</strong> acarreta citação automática — faz-se citação tradicional + justificativa sob pena de <strong>multa de até 5%</strong> (art. 246, §§ 1º-A a 1º-C).</li>
+        <li><strong>Silêncio de PJ de Direito Público nos 10 dias corridos (Res. CNJ 569/2024):</strong> Gera <strong>citação automática</strong> (art. 20, § 3º-A).</li>
+        <li><strong>Microempresas e EPPs:</strong> Dispensadas de novo cadastro no DJE se já tiverem e-mail cadastrado na <strong>Redesim</strong> (art. 246, § 5º, CPC; art. 17, Res. 455).</li>
+        <li><strong>DJE vs. DJEN:</strong> DJE é para <em>partes e terceiros</em> (citação e intimação pessoal); DJEN é para <em>advogados</em> (intimações comuns) e <em>editais</em>.</li>
+        <li><strong>Citação por WhatsApp:</strong> Não está prevista no art. 246 do CPC; só se valida pela <strong>instrumentalidade das formas</strong> (art. 277) com prova robusta de autenticidade e ciência inequívoca, ou por <strong>negócio processual</strong> (art. 190 / Enunciado 19/FPPC).</li>
+        <li><strong>Comparecimento espontâneo (art. 239, § 1º):</strong> Supre falta/nulidade da citação; advogado precisa de <strong>poderes especiais</strong> para receber citação (STJ, EREsp 1.709.915/CE).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ABA 6 -->
+  <section id="tab6" class="panel">
+    <div class="quiz-bar">
+      <div class="score-pill" id="scoreBox">Respondidas: 0 / 50 · Acertos: 0</div>
+      <button class="reset-btn" onclick="resetQuiz()">Reiniciar Bateria</button>
+    </div>
+    <div id="quizContainer"></div>
+  </section>
+
+</main>
+
+<footer>
+  Material de Estudo Autossuficiente · Fontes Internas do Vault Obsidian (CF/88 art. 5º, LV, CPC arts. 190, 231, 238–259 e 277, Lei nº 11.419/2006, Resoluções CNJ nº 455/2022 e nº 569/2024, Doutrina Elpídio Donizetti Cap. 7 e Aula 09 ESA Nacional — Prof. Guilherme Hartmann).
+</footer>
+
+<script>
+function toggleTheme() {
+  const dark = document.documentElement.getAttribute("data-theme") === "dark";
+  document.documentElement.setAttribute("data-theme", dark ? "light" : "dark");
+  document.getElementById("themeBtn").textContent = dark ? "Modo Escuro" : "Modo Claro";
+}
+
+function openTab(id, btn) {
+  document.querySelectorAll("section.panel").forEach(s => s.classList.remove("active"));
+  document.querySelectorAll("button.tab-btn").forEach(b => b.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+  btn.classList.add("active");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+const QUESTIONS = [
+  // 1-20: Tópicos da Aula 09 ESA (Prof. Guilherme Hartmann)
+  { tag: "Aula ESA", q: "Segundo o relatório Justiça em Números do CNJ (2024) citado na aula, qual é a porcentagem aproximada de processos que tramitam em meio eletrônico no Brasil?", opts: ["90%.", "75%.", "100%.", "30%.", "50%."], ans: 0, exp: "Cerca de 90% dos processos brasileiros tramitam em meio eletrônico (CNJ, 2024)." },
+  { tag: "Aula ESA", q: "O que é exigido pelo CPC e pela Lei nº 11.419/2006 para que uma parte receba formalmente citações eletrônicas pelo sistema do tribunal?", opts: ["Apenas possuir qualquer conta de e-mail pessoal.", "Presença física prévia em audiência.", "Pagamento de taxa específica de cadastro.", "Cadastro prévio no sistema/portal do Poder Judiciário (Domicílio Judicial Eletrônico).", "Envio prévio de carta registrada."], ans: 3, exp: "CPC, art. 246, caput e § 1º, e Lei nº 11.419/2006, arts. 2º e 6º: exige credenciamento/cadastro prévio." },
+  { tag: "Aula ESA", q: "Para pessoas jurídicas privadas ou pessoas físicas cadastradas no DJE, qual é a consequência se NÃO houver confirmação de recebimento da citação eletrônica no prazo de 3 dias úteis (art. 246, § 1º-A, CPC)?", opts: ["A citação é considerada automaticamente realizada.", "O processo é extinto sem mérito.", "A citação será realizada pelos meios tradicionais (correio, oficial de justiça, cartório ou edital), devendo o réu apresentar justa causa na primeira oportunidade sob pena de multa.", "O prazo de contestação é dobrado.", "O réu é declarado revel imediatamente."], ans: 2, exp: "CPC, art. 246, §§ 1º-A a 1º-C, e Res. CNJ 455/2022, art. 20, § 3º: não há citação automática para particulares." },
+  { tag: "Aula ESA", q: "Pode um processo existir e ser válido mesmo sem a citação do réu (art. 239, CPC)?", opts: ["Não, todo processo sem citação é inexistente.", "Sim, nas hipóteses de indeferimento da petição inicial ou improcedência liminar do pedido, pois o réu não sofre prejuízo nem condenação.", "Sim, inclusive para condenar o réu revel.", "Apenas em execuções fiscais.", "Apenas nos Juizados Especiais."], ans: 1, exp: "CPC, art. 239, caput: ressalva expressamente o indeferimento da inicial e a improcedência liminar do pedido." },
+  { tag: "Aula ESA", q: "Qual foi a principal mudança trazida pela Lei nº 14.195/2021 no art. 246 do CPC?", opts: ["Aboliu a citação por oficial de justiça.", "Tornou a citação por meio eletrônico a modalidade preferencial.", "Autorizou a citação automática por WhatsApp sem anuência.", "Eliminou a citação por edital.", "Tornou obrigatório o cadastro de pessoas físicas no DJE."], ans: 1, exp: "A Lei nº 14.195/2021 alterou o art. 246 do CPC para colocar a citação por meio eletrônico como modalidade preferencial." },
+  { tag: "Aula ESA", q: "Segundo o julgado do TJRJ (2024) analisado na aula, a previsão de 'citação por meio eletrônico' no art. 246 do CPC:", opts: ["Abrange automaticamente WhatsApp, Instagram Direct e SMS.", "Não inclui, por si só, aplicativos de mensagem como WhatsApp, pois exige o sistema oficial com cadastro prévio.", "Dispensa o Domicílio Judicial Eletrônico.", "Só se aplica a pessoas físicas.", "Revogou a citação postal."], ans: 1, exp: "TJRJ (2024): a citação eletrônica formal do art. 246 do CPC não se confunde com envio informal por aplicativos de mensagem." },
+  { tag: "Aula ESA", q: "Qual é o fundamento legal utilizado pela jurisprudência para, excepcionalmente, validar uma citação realizada via WhatsApp quando comprovada ciência inequívoca sem prejuízo?", opts: ["Princípio da taxatividade mitigada.", "Princípio da instrumentalidade das formas (art. 277 do CPC).", "Princípio da inércia da jurisdição.", "Princípio do juiz natural.", "Princípio da eventualidade."], ans: 1, exp: "CPC, art. 277: o ato realizado de outro modo é válido se alcançar sua finalidade (ciência inequívoca sem prejuízo)." },
+  { tag: "Aula ESA", q: "Quais são os três elementos indutivos de autenticidade apontados pela jurisprudência do STJ (matéria criminal / parâmetro de validação) para validar comunicações via WhatsApp?", opts: ["Apenas um print da tela.", "Confirmação do número de telefone, confirmação escrita de recebimento/ciência e foto individual (ressalvando-se a fragilidade da foto isolada).", "Apenas a foto do perfil no aplicativo.", "Ligação anônima de vizinho.", "Envio de dois emojis."], ans: 1, exp: "STJ: confirmação do número de telefone, confirmação escrita e foto individual (com cautela quanto à foto isolada)." },
+  { tag: "Aula ESA", q: "Qual é a finalidade do Domicílio Judicial Eletrônico (DJE), regulamentado pelas Resoluções CNJ nº 455/2022 e nº 569/2024?", opts: ["Servir exclusivamente para intimações comuns de advogados.", "Servir exclusivamente para citação eletrônica e comunicações que exijam vista, ciência ou intimação pessoal da parte ou de terceiros (exceto edital).", "Substituir os contratos sociais nas Juntas Comerciais.", "Publicar editais de leilão apenas.", "Servir apenas para processos físicos."], ans: 1, exp: "Res. CNJ 455/2022, art. 18 (redação da Res. CNJ 569/2024): exclusivo para citação eletrônica e comunicações pessoais de partes/terceiros." },
+  { tag: "Aula ESA", q: "Por qual plataforma são realizadas as intimações ordinárias destinadas aos advogados (quando a lei não exige vista ou intimação pessoal) e a publicação de editais?", opts: ["Domicílio Judicial Eletrônico (DJE).", "Diário de Justiça Eletrônico Nacional (DJEN — comunica.pje).", "WhatsApp institucional.", "Redesim.", "Correio físico exclusivamente."], ans: 1, exp: "Res. CNJ 455/2022, arts. 11, § 3º, 13 e 18: intimações comuns aos advogados e editais ocorrem via DJEN." },
+  { tag: "Aula ESA", q: "Qual é o principal benefício prático de incluir, em contratos, cláusula com e-mail e telefone (WhatsApp) autorizando comunicações processuais (art. 190, CPC e Enunciado 19/FPPC)?", opts: ["Dispensar o advogado no processo.", "Validar preventivamente a citação/intimação eletrônica por negócio processual atípico e afastar alegações futuras de desconhecimento.", "Dobrar o prazo de contestação.", "Alterar a competência absoluta do juízo.", "Impedir a interposição de recursos."], ans: 1, exp: "CPC, art. 190, e Enunciado 19/FPPC: convenção válida sobre meios alternativos de comunicação processual." },
+  { tag: "Aula ESA", q: "Segundo decisão do TJMG (fev./2025) mencionada na aula, em relação à citação eletrônica de pessoa física e ao uso de WhatsApp:", opts: ["A pessoa física é obrigada a cadastrar-se no DJE sob pena de multa.", "O cadastro de pessoa física no DJE é voluntário e o uso do WhatsApp sem anuência expressa do destinatário torna a citação inválida.", "Qualquer mensagem de WhatsApp de oficial de justiça dispensa anuência e confirmação.", "O WhatsApp substituiu o DJE em Minas Gerais.", "A citação por WhatsApp gera revelia imediata."], ans: 1, exp: "TJMG (fev./2025): cadastro de PF no DJE é facultativo; WhatsApp sem anuência expressa foi considerado inválido." },
+  { tag: "Aula ESA", q: "Qual é o principal obstáculo prático enfrentado pelos advogados na fase inicial da demanda que a citação eletrônica visa mitigar?", opts: ["A falta de computadores nos tribunais.", "A resistência do demandado em ser localizado/citado para protelar o andamento do processo.", "A inexistência de advogados cadastrados.", "A proibição de citação postal.", "A ausência de juízes."], ans: 1, exp: "A citação eletrônica busca superar a dificuldade prática de localizar demandados que tentam se furtar à citação." },
+  { tag: "Aula ESA", q: "Qual é o fundamento constitucional direto que torna a citação requisito essencial para a condenação do demandado?", opts: ["Art. 5º, LV, da CF/88 (contraditório e ampla defesa).", "Art. 37 da CF/88 (administração pública).", "Art. 93 da CF/88 (estatuto da magistratura).", "Art. 150 da CF/88 (limitações ao poder de tributar).", "Art. 170 da CF/88 (ordem econômica)."], ans: 0, exp: "CF/88, art. 5º, LV: assegura o contraditório e a ampla defesa aos litigantes." },
+  { tag: "Aula ESA", q: "Qual é o valor máximo da multa por ato atentatório à dignidade da justiça prevista no art. 246, § 1º-C, do CPC para o réu que deixa de confirmar o recebimento da citação eletrônica sem justa causa?", opts: ["Até 1% do valor da causa.", "Até 2% do valor da causa.", "Até 5% do valor da causa.", "Até 10% do valor da causa.", "Até 20% do valor da causa."], ans: 2, exp: "CPC, art. 246, § 1º-C: multa de até 5% (cinco por cento) do valor da causa." },
+  { tag: "Aula ESA", q: "Em relação ao comparecimento espontâneo do demandado aos autos (art. 239, § 1º, CPC):", opts: ["Não supre a nulidade da citação.", "Supre a falta ou a nulidade da citação, fluindo a partir desta data o prazo para contestação ou embargos à execução.", "Obriga o juiz a repetir a citação por oficial de justiça.", "Gera multa de 5% automaticamente.", "Só vale se feito pessoalmente sem advogado."], ans: 1, exp: "CPC, art. 239, § 1º: supre a falta ou nulidade da citação (com poderes especiais se por advogado — STJ, EREsp 1.709.915/CE)." },
+  { tag: "Aula ESA", q: "De acordo com o Enunciado 19 do FPPC, as partes podem celebrar negócio jurídico processual atípico para:", opts: ["Suprimir o contraditório.", "Estabelecer meios alternativos de comunicação processual entre as partes.", "Escolher o promotor de justiça.", "Impedir o acesso ao Judiciário.", "Alterar regras de competência absoluta."], ans: 1, exp: "Enunciado 19/FPPC c/c art. 190 do CPC: admite convenções processuais atípicas sobre comunicações." },
+  { tag: "Aula ESA", q: "Em qual prazo, contado da decisão que a determinar, deve ser expedida/feita a citação preferencial por meio eletrônico segundo o art. 246, caput, do CPC?", opts: ["Em até 24 horas.", "Em até 2 (dois) dias úteis.", "Em até 5 (cinco) dias úteis.", "Em até 10 (dez) dias corridos.", "Em até 15 (quinze) dias úteis."], ans: 1, exp: "CPC, art. 246, caput: no prazo de até 2 (dois) dias úteis, contado da decisão que a determinar." },
+  { tag: "Aula ESA", q: "Qual é o prazo geral previsto no art. 238, parágrafo único, do CPC (incluído pela Lei nº 14.195/2021) para efetivação da citação a partir da propositura da ação?", opts: ["15 dias.", "30 dias.", "45 dias.", "60 dias.", "90 dias."], ans: 2, exp: "CPC, art. 238, parágrafo único: 'A citação será efetivada em até 45 (quarenta e cinco) dias a partir da propositura da ação.'" },
+  { tag: "Aula ESA", q: "Quando o réu alega nulidade da citação após comparecimento espontâneo e o juiz REJEITA a alegação de nulidade (art. 239, § 2º, CPC), qual é a consequência no processo de conhecimento?", opts: ["Abre-se novo prazo de 15 dias para contestar.", "O réu será considerado revel.", "O processo é extinto sem mérito.", "Repete-se a citação por edital.", "Remetem-se os autos ao tribunal."], ans: 1, exp: "CPC, art. 239, § 2º, I: rejeitada a alegação de nulidade, tratando-se de processo de conhecimento, o réu será considerado revel." },
+
+  // 21-50: Aprofundamento em Lei Seca (Res. CNJ 455/2022, Res. CNJ 569/2024, Lei 11.419/2006, CPC) e Doutrina do Vault
+  { tag: "Res. CNJ 569/24", q: "De acordo com o art. 20, § 3º-A, da Resolução CNJ nº 455/2022 (incluído pela Resolução CNJ nº 569/2024), o que ocorre se uma PESSOA JURÍDICA DE DIREITO PÚBLICO não consultar a citação no DJE no prazo de 10 dias corridos?", opts: ["A citação é realizada por oficial de justiça.", "O ente será considerado automaticamente citado na data do término desse prazo, não se aplicando o art. 219 do CPC a esse período.", "Aplica-se multa de 5% e nova citação postal.", "O prazo é de 3 dias úteis sem citação automática.", "O processo fica suspenso por 90 dias."], ans: 1, exp: "Res. CNJ 455/2022, art. 20, § 3º-A (Res. 569/2024): para PJs de direito público, após 10 dias corridos sem consulta, há citação automática." },
+  { tag: "Res. CNJ 569/24", q: "Conforme o art. 20, § 3º-B, da Resolução CNJ nº 455/2022 (incluído pela Res. 569/2024) e o art. 231, IX, do CPC, havendo consulta à citação eletrônica no prazo legal, quando começa a correr o prazo para resposta?", opts: ["No mesmo dia da consulta.", "No primeiro dia útil seguinte à confirmação.", "No quinto dia útil seguinte à confirmação.", "Após 10 dias corridos da confirmação.", "Na data do envio da mensagem."], ans: 2, exp: "CPC, art. 231, IX, e Res. CNJ 455/2022, art. 20, § 3º-B: começa a correr no quinto dia útil seguinte à confirmação." },
+  { tag: "Res. CNJ 569/24", q: "Para os demais casos que exijam INTIMAÇÃO PESSOAL no DJE (art. 20, § 4º, Res. CNJ 455/2022, redação da Res. 569/2024, c/c art. 5º, § 3º, Lei 11.419/2006), não havendo consulta em até 10 dias corridos:", opts: ["A intimação é feita por oficial de justiça.", "Considera-se automaticamente realizada na data do término desse prazo (não se aplicando o art. 219 do CPC a esse período).", "A intimação é considerada nula.", "Publica-se novo edital no DJEN.", "Contam-se 10 dias úteis."], ans: 1, exp: "Res. CNJ 455/2022, art. 20, § 4º, e Lei 11.419/2006, art. 5º, § 3º: intimação automática ao fim dos 10 dias corridos." },
+  { tag: "Res. CNJ 455/22", q: "Segundo o art. 16, § 2º, da Resolução CNJ nº 455/2022, como as pessoas físicas podem realizar cadastro voluntário no Domicílio Judicial Eletrônico?", opts: ["Apenas presencialmente em Brasília.", "Via autenticação no serviço 'gov.br' com nível de conta prata ou ouro (Login Único da PDPJ-Br) ou mediante certificado digital.", "Apenas por conta gov.br bronze.", "Exclusivamente por meio de advogado.", "Não é permitido cadastro de pessoas físicas."], ans: 1, exp: "Res. CNJ 455/2022, art. 16, § 2º, I e II: gov.br prata/ouro ou certificado digital." },
+  { tag: "Res. CNJ 455/22", q: "Como é feita a identificação do usuário no Domicílio Judicial Eletrônico (art. 19, Res. CNJ 455/2022)?", opts: ["Pelo número da carteira da OAB.", "Pelo número do CPF ou do CNPJ mantido junto à Receita Federal do Brasil.", "Pelo endereço residencial.", "Pelo número de telefone celular.", "Pelo e-mail pessoal apenas."], ans: 1, exp: "Res. CNJ 455/2022, art. 19: identificação pelo número do CPF ou CNPJ." },
+  { tag: "Res. CNJ 455/22", q: "Por quanto tempo as comunicações processuais permanecem disponíveis para consulta no Domicílio Judicial Eletrônico antes de poderem ser excluídas (art. 22, Res. CNJ 455/2022)?", opts: ["6 meses.", "12 meses.", "24 meses.", "36 meses.", "60 meses."], ans: 2, exp: "Res. CNJ 455/2022, art. 22: permanecem disponíveis por 24 (vinte e quatro) meses." },
+  { tag: "Res. CNJ 455/22", q: "As normas da Resolução CNJ nº 455/2022 alcançam obrigatoriamente o Supremo Tribunal Federal (art. 27)?", opts: ["Sim, obrigatoriamente.", "Não alcançam o STF, que, todavia, poderá integrar-se ao Portal de Serviços, ao DJEN e ao Domicílio Eletrônico.", "Alcançam apenas o STF e o STJ.", "Proíbem o STF de aderir.", "Valem apenas para a Justiça Estadual."], ans: 1, exp: "Res. CNJ 455/2022, art. 27: não alcançam o STF, facultada a integração." },
+  { tag: "Res. CNJ 455/22", q: "Quando a consulta à comunicação processual no DJE ocorrer em dia NÃO ÚTIL (art. 20, § 1º, Res. CNJ 455/2022 e art. 5º, § 2º, Lei 11.419/2006), quando será considerada realizada?", opts: ["Na própria data da consulta.", "No primeiro dia útil subsequente.", "Cinco dias úteis depois.", "No dia útil anterior.", "Considera-se nula."], ans: 1, exp: "Res. CNJ 455/2022, art. 20, § 1º, e Lei 11.419/2006, art. 5º, § 2º: primeiro dia útil subsequente." },
+  { tag: "Res. CNJ 455/22", q: "Em caso de indisponibilidade do Portal de Serviços, quando os prazos que vencerem no dia serão prorrogados para o dia útil subsequente (art. 8º, Res. CNJ 455/2022)?", opts: ["Por qualquer indisponibilidade entre 0h e 6h.", "Quando a indisponibilidade for superior a 60 minutos entre 6h e 23h, ou ocorrer qualquer indisponibilidade entre 23h e 24h.", "Apenas se durar mais de 24 horas seguidas.", "Em feriados e finais de semana.", "Nunca há prorrogação."], ans: 1, exp: "Res. CNJ 455/2022, art. 8º, I e II (e § 1º exclui 0h–6h, feriados e finais de semana)." },
+  { tag: "Res. CNJ 455/22", q: "Conforme o art. 11, § 3º, da Resolução CNJ nº 455/2022 (redação da Res. 569/2024), quando a lei NÃO exigir vista ou intimação pessoal e houver comunicação concomitante por outro meio além do DJEN:", opts: ["Prevalece a comunicação que ocorrer por último.", "Os prazos contam-se a partir da publicação no DJEN, possuindo valor meramente informacional a eventual concomitância por outros meios.", "Anulam-se ambas as intimações.", "Dobra-se o prazo processual.", "Prevalece o envio por e-mail."], ans: 1, exp: "Res. CNJ 455/2022, art. 11, § 3º (Res. 569/2024): prazo conta do DJEN; outros meios têm caráter meramente informacional." },
+  { tag: "CPC Art. 246", q: "Segundo o art. 246, § 5º, do CPC e o art. 17 da Resolução CNJ nº 455/2022, qual é a regra para microempresas e empresas de pequeno porte quanto ao cadastro obrigatório?", opts: ["São totalmente dispensadas de receber citações eletrônicas.", "Somente se sujeitam ao cadastro do § 1º quando NÃO possuírem endereço eletrônico cadastrado na Redesim (cujo e-mail será aproveitado).", "Pagam multa em dobro se não se cadastrarem.", "Só podem ser citadas por oficial de justiça.", "Precisam de certificado digital ICP-Brasil obrigatório."], ans: 1, exp: "CPC, art. 246, § 5º, e Res. CNJ 455/2022, art. 17: aproveita-se o e-mail da Redesim." },
+  { tag: "Lei 11.419/06", q: "Nos termos do art. 6º da Lei nº 11.419/2006, quais citações são expressamente EXCETUADAS da regra geral de citação eletrônica daquela Lei?", opts: ["As da Fazenda Pública.", "As dos Juizados Especiais Cíveis.", "As dos Direitos Processuais Criminal e Infracional.", "As de Direito Trabalhista.", "As de ações de cobrança."], ans: 2, exp: "Lei nº 11.419/2006, art. 6º: 'excetuadas as dos Direitos Processuais Criminal e Infracional, poderão ser feitas por meio eletrônico, desde que a íntegra dos autos seja acessível ao citando'." },
+  { tag: "Lei 11.419/06", q: "Segundo o art. 3º, parágrafo único, e art. 10, § 1º, da Lei nº 11.419/2006, até que horário do último dia do prazo são consideradas tempestivas as petições eletrônicas?", opts: ["Até as 18 horas.", "Até as 19 horas.", "Até as 20 horas.", "Até as 24 (vinte e quatro) horas do seu último dia.", "Até as 12 horas."], ans: 3, exp: "Lei nº 11.419/2006, art. 3º, parágrafo único, e art. 10, § 1º: até as 24 horas do último dia." },
+  { tag: "Lei 11.419/06", q: "De acordo com o art. 4º, §§ 3º e 4º, da Lei nº 11.419/2006 (e Donizetti, Cap. 7), disponibilizado um ato no Diário da Justiça eletrônico na segunda-feira (dia 01):", opts: ["A data da publicação é segunda-feira e o prazo começa na terça-feira.", "Considera-se data da publicação o primeiro dia útil seguinte (terça-feira, dia 02) e o prazo inicia-se no primeiro dia útil subsequente (quarta-feira, dia 03).", "O prazo começa imediatamente na segunda-feira.", "A publicação só vale após 10 dias corridos.", "O prazo começa na sexta-feira."], ans: 1, exp: "Lei nº 11.419/2006, art. 4º, §§ 3º e 4º: disponibilização → 1º dia útil = publicação → próximo dia útil = início do prazo." },
+  { tag: "Lei 11.419/06", q: "Conforme o art. 11, § 3º, da Lei nº 11.419/2006, até quando devem ser preservados pelo detentor os documentos originais que foram digitalizados e juntados aos autos eletrônicos?", opts: ["Por 30 dias após a juntada.", "Até a audiência de conciliação.", "Até o trânsito em julgado da sentença ou, quando admitida, até o final do prazo para interposição de ação rescisória.", "Podem ser destruídos imediatamente após o envio.", "Por 10 anos fixos."], ans: 2, exp: "Lei nº 11.419/2006, art. 11, § 3º: até o trânsito em julgado ou o final do prazo para ação rescisória." },
+  { tag: "Lei 11.419/06", q: "Os documentos cuja digitalização seja tecnicamente inviável por grande volume ou ilegibilidade devem ser apresentados em cartório em qual prazo (art. 11, § 5º, Lei 11.419/2006)?", opts: ["3 dias úteis.", "5 dias.", "10 dias contados do envio de petição eletrônica comunicando o fato.", "15 dias.", "30 dias."], ans: 2, exp: "Lei nº 11.419/2006, art. 11, § 5º: prazo de 10 dias contados da petição comunicando o fato." },
+  { tag: "Lei 11.419/06", q: "Segundo o art. 11, § 6º, da Lei nº 11.419/2006 (redação da Lei nº 13.793/2019), os documentos digitalizados juntados em processo eletrônico (que NÃO tramita em segredo de justiça) estão disponíveis para acesso externo pelos advogados:", opts: ["Apenas com procuração juntada nos autos.", "Independentemente de procuração nos autos.", "Apenas presencialmente no balcão.", "Somente após autorização judicial expressa.", "Apenas para advogados públicos."], ans: 1, exp: "Lei nº 11.419/2006, art. 11, § 6º: disponíveis aos advogados independentemente de procuração nos autos, salvo segredo de justiça." },
+  { tag: "Lei 11.419/06", q: "De acordo com o art. 9º, § 1º, da Lei nº 11.419/2006, as citações, intimações, notificações e remessas que viabilizem o acesso à íntegra do processo eletrônico serão consideradas:", opts: ["Comunicações meramente informais.", "Vista pessoal do interessado para todos os efeitos legais.", "Citação ficta por edital.", "Válidas apenas se impressas em papel.", "Intimações sujeitas a publicação no Diário Oficial."], ans: 1, exp: "Lei nº 11.419/2006, art. 9º, § 1º: consideradas vista pessoal do interessado para todos os efeitos legais." },
+  { tag: "CPC Art. 190", q: "Nos termos do art. 190, parágrafo único, do CPC, em quais hipóteses o juiz pode recusar aplicação a um negócio jurídico processual (inclusive sobre citações/comunicações)?", opts: ["Sempre que discordar da conveniência das partes.", "Somente nos casos de nulidade, inserção abusiva em contrato de adesão ou manifesta situação de vulnerabilidade de alguma das partes.", "Em qualquer contrato escrito.", "Apenas se o Ministério Público requerer.", "Nunca, pois o juiz não controla negócios processuais."], ans: 1, exp: "CPC, art. 190, parágrafo único: controle de validade restrito a nulidade, abusividade em adesão ou manifesta vulnerabilidade." },
+  { tag: "Doutrina Vault", q: "Segundo a Corte Especial do STJ (EREsp 1.709.915/CE — Vault, Cap. 7 de Donizetti), para que o comparecimento espontâneo por meio de advogado supra a falta de citação (art. 239, § 1º, CPC):", opts: ["Basta procuração com cláusula ad judicia geral.", "Exige-se procuração com poderes expressos e especiais para receber citação.", "Não é necessário procuração.", "Só vale se o réu assinar junto com o advogado.", "Só se aplica em processos físicos."], ans: 1, exp: "Elpídio Donizetti (Cap. 7): STJ, Corte Especial, EREsp 1.709.915/CE exige poderes específicos para receber citação." },
+  { tag: "Doutrina Vault", q: "Qual é o vício decorrente da ausência ou nulidade absoluta de citação em sentença condenatória (Elpídio Donizetti, Cap. 7 — Vault)?", opts: ["Nulidade relativa sujeita a preclusão imediata.", "Vício transrescisório insanável (querela nullitatis insanabilis), arguível a qualquer tempo.", "Mera irregularidade sem consequências.", "Vício sanável apenas em 2 anos por ação rescisória.", "Incompetência relativa."], ans: 1, exp: "Elpídio Donizetti (Cap. 7): vício transrescisório insanável (querela nullitatis insanabilis)." },
+  { tag: "Doutrina Vault", q: "Segundo o art. 247 do CPC (Vault — Donizetti, Cap. 7), a citação pelo correio (e regras de restrição citatória) NÃO cabe em:", opts: ["Ações de cobrança comum.", "Ações de estado (família) e quando o citando for incapaz.", "Ações contra empresas privadas.", "Ações indenizatórias.", "Ações monitórias."], ans: 1, exp: "CPC, art. 247, I e II (Donizetti, Cap. 7): vedada nas ações de estado e contra incapaz." },
+  { tag: "Doutrina Vault", q: "Nos condomínios edilícios ou loteamentos com controle de acesso (art. 248, § 4º, CPC — Vault, Donizetti, Cap. 7), a entrega da carta de citação postal a funcionário da portaria responsável pelo recebimento de correspondência:", opts: ["É sempre nula.", "É válida (salvo se o funcionário declarar por escrito, sob as penas da lei, que o destinatário está ausente).", "Exige assinatura do síndico em cartório.", "Só vale para pessoas jurídicas.", "Só vale se acompanhada de oficial de justiça."], ans: 1, exp: "CPC, art. 248, § 4º (Donizetti, Cap. 7): válida a entrega ao funcionário da portaria." },
+  { tag: "Doutrina Vault", q: "Na citação por hora certa (arts. 252 a 254, CPC — Vault, Donizetti, Cap. 7), quantas vezes o oficial de justiça deve procurar o citando em seu domicílio com suspeita de ocultação antes de intimar familiar/vizinho?", opts: ["Uma vez.", "Duas vezes.", "Três vezes.", "Cinco vezes.", "Sete vezes."], ans: 1, exp: "CPC, art. 252 (Donizetti, Cap. 7): procurado o réu por duas vezes com suspeita de ocultação." },
+  { tag: "Doutrina Vault", q: "Em caso de revelia de réu citado por hora certa ou por edital (art. 72, II, CPC — Vault, Donizetti, Cap. 7), o que é obrigatório?", opts: ["Julgamento antecipado condenatório imediato.", "Nomeação de curador especial.", "Nova citação por WhatsApp.", "Aplicação de multa de 5%.", "Extinção do processo."], ans: 1, exp: "CPC, art. 72, II (Donizetti, Cap. 7): obrigatória a nomeação de curador especial." },
+  { tag: "Doutrina Vault", q: "Segundo o art. 240, § 1º, do CPC (Vault — Donizetti, Cap. 7), o despacho que ordena a citação (mesmo proferido por juiz incompetente):", opts: ["Não interrompe a prescrição.", "Interrompe a prescrição, retroagindo os efeitos à data da propositura da ação.", "Interrompe a prescrição apenas a partir da juntada do AR.", "Só interrompe se o juiz for absolutamente competente.", "Suspende o processo por 45 dias."], ans: 1, exp: "CPC, art. 240, § 1º, c/c Súmula 106/STJ: interrompe a prescrição retroagindo à propositura da ação." },
+  { tag: "Doutrina Vault", q: "No litisconsórcio passivo, quando começa a fluir o prazo comum de contestação (art. 231, § 1º, CPC — Vault, Donizetti, Cap. 7)?", opts: ["Da primeira citação realizada.", "Da última juntada de mandado, AR ou comunicação de citação aos autos.", "Da data da distribuição da inicial.", "Apenas após audiência de instrução.", "Individualmente para cada réu na data do envio."], ans: 1, exp: "CPC, art. 231, § 1º: flui da data de ocorrência da última das hipóteses de juntada/confirmação." },
+  { tag: "Doutrina Vault", q: "Conforme o art. 272, §§ 2º e 5º, do CPC e art. 12, § 1º, da Resolução CNJ nº 455/2022, sob pena de nulidade, na intimação realizada pelo DJEN deve constar obrigatoriamente:", opts: ["Apenas o número do processo.", "Tribunal, órgão julgador, número único do processo, nomes das partes, de seus advogados e respectivos números de inscrição na OAB (ou sociedade de advogados, se requerido).", "Apenas o nome do autor.", "Apenas o CPF das partes.", "O endereço residencial do juiz."], ans: 1, exp: "CPC, art. 272, e Res. CNJ 455/2022, art. 12, § 1º." },
+  { tag: "Doutrina Vault", q: "Segundo o art. 282, § 1º, do CPC (princípio do prejuízo — pas de nullité sans grief — Vault, Donizetti, Cap. 7):", opts: ["Todo defeito formal gera nulidade absoluta automática.", "O ato não será repetido nem sua falta será suprida quando não prejudicar a parte.", "O prejuízo é sempre presumido em comunicações eletrônicas.", "Apenas o autor pode alegar nulidade.", "A nulidade pode ser alegada por quem lhe deu causa."], ans: 1, exp: "CPC, art. 282, § 1º (e art. 276 proíbe alegação da própria torpeza)." },
+  { tag: "Revisão Geral", q: "Assinale a alternativa INTEIRAMENTE CORRETA sobre a citação eletrônica no CPC e nas Resoluções CNJ nº 455/2022 e nº 569/2024:", opts: ["A citação por WhatsApp está expressamente prevista como modalidade preferencial no art. 246 do CPC.", "Se empresa privada não abrir a citação no DJE em 3 dias úteis, considera-se automaticamente citada.", "A citação eletrônica é preferencial (art. 246, CPC), exige cadastro prévio no DJE, dá 3 dias úteis para confirmação às PJs privadas (sem citação automática, mas sujeita a multa de até 5% sem justa causa), 10 dias corridos com citação automática às PJs de direito público (Res. 569/2024) e inicia o prazo de resposta no 5º dia útil seguinte à confirmação (art. 231, IX).", "O DJE substitui o DJEN para intimações comuns de advogados.", "É vedado convencionar meios eletrônicos de comunicação em contrato pelo art. 190 do CPC."], ans: 2, exp: "Síntese exata do art. 246 e art. 231, IX, do CPC, c/c Resoluções CNJ nº 455/2022 e nº 569/2024." }
+];
+
+const state = {};
+function renderQuiz() {
+  const container = document.getElementById("quizContainer");
+  container.innerHTML = "";
+  const letters = ["A", "B", "C", "D", "E"];
+  QUESTIONS.forEach((item, idx) => {
+    const card = document.createElement("div");
+    card.className = "q-card";
+    const optsHtml = item.opts.map((opt, oi) =>
+      `<button class="opt-btn" id="q${idx}_o${oi}" onclick="answer(${idx}, ${oi})"><strong>${letters[oi]}.</strong> ${opt}</button>`
+    ).join("");
+    card.innerHTML = `
+      <div class="q-head"><span class="q-tag">${item.tag}</span>${idx + 1}. ${item.q}</div>
+      ${optsHtml}
+      <div class="q-exp" id="q${idx}_exp"><strong>Gabarito (${letters[item.ans]}):</strong> ${item.exp}</div>`;
+    container.appendChild(card);
+  });
+  updateScore();
+}
+function answer(qi, oi) {
+  if (state[qi] !== undefined) return;
+  state[qi] = oi;
+  const item = QUESTIONS[qi];
+  for (let i = 0; i < item.opts.length; i++) {
+    const btn = document.getElementById(`q${qi}_o${i}`);
+    btn.disabled = true;
+    if (i === item.ans) btn.classList.add("correct");
+    else if (i === oi) btn.classList.add("wrong");
+  }
+  document.getElementById(`q${qi}_exp`).classList.add("show");
+  updateScore();
+}
+function updateScore() {
+  const answered = Object.keys(state).length;
+  const correct = Object.entries(state).filter(([qi, oi]) => QUESTIONS[qi].ans === oi).length;
+  document.getElementById("scoreBox").textContent = `Respondidas: ${answered} / ${QUESTIONS.length} · Acertos: ${correct}`;
+}
+function resetQuiz() {
+  Object.keys(state).forEach(k => delete state[k]);
+  renderQuiz();
+}
+renderQuiz();
+</script>
+</body>
+</html>
